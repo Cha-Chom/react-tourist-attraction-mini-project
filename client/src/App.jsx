@@ -1,13 +1,15 @@
 import "./App.css";
+import TripList from "./components/TripList";
 
 function App() {
-  return <div className="App">
-
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-
-  </div>;
+  return (
+    <div>
+      <h1 className="text-center text-xl p-2">
+        เที่ยวไหนดี
+      </h1>
+      <TripList />
+    </div>
+  );
 }
 
 export default App;
