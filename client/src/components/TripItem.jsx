@@ -1,4 +1,4 @@
-function TripItem({ trip }) {
+function TripItem({ trip, onTagClick }) {
     return (
       <div className="flex flex-col md:flex-row gap-7 my-5 max-w-4xl mx-auto px-4">
         {/* Main Photo */}
@@ -43,7 +43,9 @@ function TripItem({ trip }) {
             {trip.tags.map((tag, index) => (
               <span
                 key={index}
-                className="text-gray-500 text-sm underline underline-offset-2"
+                onClick={() => onTagClick(tag)}
+                className="text-gray-500 text-sm underline underline-offset-2 
+                            cursor-pointer hover:text-blue-500 transition-colors"
               >
                 {tag}
               </span>
