@@ -7,6 +7,15 @@ function TripList() {
   const [trips, setTrips] = useState([]);
   const [keyword, setKeyword] = useState("");
 
+    const handleTagClick = (tag) => {
+    const words = keyword.split(" ").filter(Boolean);
+    
+    if (words.includes(tag)) return;
+    
+    const newKeyword = [...words, tag].join(" ");
+    setKeyword(newKeyword);
+    };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,7 +36,7 @@ function TripList() {
       
       <div className="">
         {trips.map((trip) => (
-          <TripItem key={trip.eid} trip={trip} />
+          <TripItem key={trip.eid} trip={trip} onTagClick={handleTagClick} />
         ))}
       </div>
     
